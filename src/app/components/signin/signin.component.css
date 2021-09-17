@@ -1,0 +1,37 @@
+mat-form-field {
+  display: block;
+  width: 60%;
+  margin: auto;
+}
+mat-label {
+  color: white;
+}
+mat-card {
+  width: 40%;
+  margin: 2rem auto;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 6px;
+}
+.btn {
+  background-color: rgb(223, 27, 109);
+  align-self: center;
+}
+p {
+  text-align: center;
+}
+a {
+  color: wheat;
+}
+
+@media screen and (max-width: 600px) {
+  mat-card {
+    width: 60%;
+  }
+  mat-form-field {
+    width: 100%;
+  }
+}

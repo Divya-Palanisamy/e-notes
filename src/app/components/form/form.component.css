@@ -1,0 +1,31 @@
+mat-spinner {
+  margin: 1rem auto;
+}
+mat-card {
+  margin: 1rem auto;
+  width: 50%;
+}
+.container {
+  margin: 0 0;
+}
+form {
+  width: 100%;
+  margin: 0 auto;
+}
+mat-label {
+  color: white;
+  font-size: larger;
+}
+mat-form-field {
+  display: block;
+  letter-spacing: 1px;
+}
+input,
+textarea {
+  letter-spacing: 1px;
+}
+button {
+  background-color: rgb(240, 54, 110);
+  display: inline-block;
+  margin: 0 18px;
+}

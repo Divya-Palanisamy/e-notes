@@ -1,0 +1,36 @@
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+<mat-card *ngIf="!isLoading">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div class="container">
+            <div *ngIf="buttonName !== 'ADD'; else createBlock">
+                <mat-form-field >
+                    <mat-label>Title</mat-label>
+                        <input type="text" matInput name="title" [ngModel]="note?.title" #title="ngModel" required minlength="3" maxlength="15">
+                        <mat-error *ngIf="title.invalid">Please enter a title</mat-error>
+                </mat-form-field>
+                <mat-form-field >
+                    <mat-label>Content</mat-label>
+                    <textarea matInput rows="5" cols="10" name="content" [ngModel]="note?.content" maxlength="150" #content="ngModel" required></textarea>
+                    <mat-error *ngIf="content.invalid">Please enter some content</mat-error>
+                </mat-form-field>
+            </div>
+            <ng-template #createBlock>
+                <mat-form-field >
+                    <mat-label>Title</mat-label>
+                        <input matInput name="title" ngModel #title="ngModel" required minlength="3" maxlength="15">
+                        <mat-error *ngIf="title.invalid">Please enter a title</mat-error>
+                </mat-form-field>
+                <mat-form-field >
+                    <mat-label>Content</mat-label>
+                    <textarea matInput rows="5" cols="10" name="content" ngModel maxlength="150" #content="ngModel" required></textarea>
+                    <mat-error *ngIf="content.invalid">Please enter some content</mat-error>
+                </mat-form-field>
+            </ng-template>
+    
+             
+                <button mat-raised-button>{{buttonName}}</button>
+                <button [routerLink]="['/']" mat-raised-button>Back</button>
+        </div>
+        
+    </form>
+</mat-card>

@@ -1,0 +1,29 @@
+mat-spinner {
+  margin: 1rem auto;
+}
+.container {
+  margin: 16px auto;
+  width: 70%;
+}
+.text {
+  color: white;
+  text-align: center;
+  margin: 2rem auto;
+}
+mat-expansion-panel {
+  margin-bottom: 3px;
+}
+mat-panel-description {
+  margin-left: 2rem;
+  position: absolute;
+  right: 1.5rem;
+}
+p {
+  overflow-wrap: break-word;
+}
+.edit {
+  color: aqua;
+}
+.delete {
+  color: rgb(247, 178, 49);
+}

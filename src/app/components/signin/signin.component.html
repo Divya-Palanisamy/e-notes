@@ -1,0 +1,21 @@
+<div class="container">
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+</div>
+<mat-card *ngIf="!isLoading">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <mat-form-field >
+            <mat-label>Email</mat-label>
+                <input type="email" name="email" required ngModel #email="ngModel" matInput>
+                <mat-error *ngIf="email.invalid">Please enter a valid email</mat-error>
+        </mat-form-field>
+        <mat-form-field >
+            <mat-label>Password</mat-label>
+            <input type="password"  name="password" required ngModel #password="ngModel" minlength="6" maxlength="12" matInput >
+            <mat-error *ngIf="password.invalid">Password must be at least 6 characters long</mat-error>
+        </mat-form-field>
+        <div class="container">
+            <button mat-raised-button class="btn">Sign In</button>
+        </div>
+    </form>
+    <p>New User? <a [routerLink]="['/signup']">Signup Here</a></p>
+</mat-card>

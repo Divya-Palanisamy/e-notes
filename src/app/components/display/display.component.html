@@ -1,0 +1,22 @@
+<mat-spinner *ngIf="isLoading && isAuth"></mat-spinner>
+<div class="container" *ngIf="notes.length > 0 && !isLoading && isAuth">
+    <mat-expansion-panel *ngFor="let note of notes">
+        <mat-expansion-panel-header *ngIf="note.creator === userId">
+          <mat-panel-title>
+            {{note?.title | titlecase}}
+          </mat-panel-title>
+          <mat-panel-description>
+            {{note?.date | date}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-card-content>
+          <p>{{note?.content}}</p>
+        </mat-card-content>
+        <mat-action-row>
+            <a [routerLink]="['/edit', note.id]" class="edit" mat-button>Edit</a>
+            <button class="delete" (click)="onDelete(note?.id)" mat-button>Delete</button>
+        </mat-action-row>
+    </mat-expansion-panel>
+</div>
+<h3 *ngIf="notes.length<= 0 && !isLoading && isAuth" class="text">No Notes to show</h3>
+
